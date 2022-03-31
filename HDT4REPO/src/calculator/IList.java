@@ -1,11 +1,11 @@
 package calculator;
 
 public interface IList<T> {
-	public void InsertAtStart(T value);
+	public void InsertAtLast(T value);
 	
-	public T DeleteAtStart();
+	public T DeleteLast();
 	
-	public T GetAtStart();
+	public T GetLast();
 	
 	public boolean isEmpty();
 	
