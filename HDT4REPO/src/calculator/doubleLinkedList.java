@@ -10,6 +10,11 @@ import java.util.LinkedList;
  */
 public class doubleLinkedList<T> implements IStack<T>, IList<T> {
 	private LinkedList<String> structure;
+	
+	public doubleLinkedList() {
+		this.structure = new LinkedList<>();
+	}
+	
 	@Override
 	public void InsertAtLast(T value) {
 		// TODO Auto-generated method stub

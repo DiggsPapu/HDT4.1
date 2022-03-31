@@ -21,6 +21,7 @@ public class Factory {
 		}
 		case "List":{
 			IList<String> list = CreateList();
+//			System.out.print(list.getClass());
 			return (IStack<String>)list;
 		}
 		default:{
@@ -39,15 +40,18 @@ public class Factory {
 		Scanner scan = new Scanner(System.in);
 		System.out.print("\nIngrese el tipo de lista (LinkedList, DoubleLinkedList): ");
 		String selectedList = scan.nextLine();
+		System.out.print(selectedList);
 		switch(selectedList) {
 		
 		case "LinkedList": {
 			scan.close();
+//			System.out.print("Entro");
 			return new linkedList<>();
 			
 		}
 		case "DoubleLinkedList" :{
 			scan.close();
+//			System.out.print("Entro a d");
 			return new doubleLinkedList<>();
 			
 		}
