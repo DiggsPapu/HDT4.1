@@ -326,42 +326,42 @@ public class PostfixCalculator {
 		return postfixCalculation(Infix2Pstfix(tokenized(scan)));
 	}
 
-	public static void main(String[] args) {
-		PostfixCalculator calc = new PostfixCalculator("Vector");
-		System.out.print(calc.tokenized("(1 + 2 * 12891.389)")+"\n");
-		System.out.print(calc.tokenized("(1+2*12891.389)")+"\n");
-//		System.out.print("fjdksla\n");
-		System.out.print(calc.tokenized("(1+2*12891.389")+"\n");
-		System.out.print(calc.tokenized("(1+fjdskl*12891.389)")+"\n");
-//		System.out.print("\n\n\nOperacion1\n\n\n");
-		System.out.print(calc.Infix2Pstfix(calc.tokenized("3+2"))+"\n");
-		System.out.print(calc.Infix2Pstfix(calc.tokenized("(4+5*(1+3*(25-4)+25*3))"))+"\n");
-		System.out.print(calc.postfixCalculation((calc.Infix2Pstfix(calc.tokenized("(4+5*(1+3*(25-4)+25*3))"))))+"\n");
-		System.out.print(calc.postfixCalculation((calc.Infix2Pstfix(calc.tokenized("4+5"))))+"\n");
-		PostfixCalculator calc1 = new PostfixCalculator("ArrayList");
-		System.out.print("\n");
-		System.out.print(calc1.tokenized("(1 + 2 * 12891.389)")+"\n");
-		System.out.print(calc1.tokenized("(1+2*12891.389)")+"\n");
-//		System.out.print("fjdksla\n");
-		System.out.print(calc1.tokenized("(1+2*12891.389")+"\n");
-		System.out.print(calc1.tokenized("(1+fjdskl*12891.389)")+"\n");
-//		System.out.print("\n\n\nOperacion1\n\n\n");
-		System.out.print(calc1.Infix2Pstfix(calc1.tokenized("3+2"))+"\n");
-		System.out.print(calc1.Infix2Pstfix(calc1.tokenized("(4+5*(1+3*(25-4)+25*3))"))+"\n");
-		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("(4+5*(1+3*(25-4)+25*3))"))))+"\n");
-		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("4+5"))))+"\n");
-		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("20*50"))))+"\n");
-		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("20+10*"))))+"\n");
-		System.out.print(calc1.calculate("1+1")+"\n");
-		System.out.print(calc1.calculate("27* (24+36/0)")+"\n");
-		System.out.print(calc1.calculate("27* (24-36/0)")+"\n");
-
-		System.out.print(calc1.calculate("27* (24+36/0")+"\n");
-
-		System.out.print(calc1.calculate("27* (24++36/0)")+"\n");
-
-		System.out.print(calc1.calculate("27* (fjdskal+36/0)")+"\n");
-	}
-	
+//	public static void main(String[] args) {
+//		PostfixCalculator calc = new PostfixCalculator("Vector");
+//		System.out.print(calc.tokenized("(1 + 2 * 12891.389)")+"\n");
+//		System.out.print(calc.tokenized("(1+2*12891.389)")+"\n");
+////		System.out.print("fjdksla\n");
+//		System.out.print(calc.tokenized("(1+2*12891.389")+"\n");
+//		System.out.print(calc.tokenized("(1+fjdskl*12891.389)")+"\n");
+////		System.out.print("\n\n\nOperacion1\n\n\n");
+//		System.out.print(calc.Infix2Pstfix(calc.tokenized("3+2"))+"\n");
+//		System.out.print(calc.Infix2Pstfix(calc.tokenized("(4+5*(1+3*(25-4)+25*3))"))+"\n");
+//		System.out.print(calc.postfixCalculation((calc.Infix2Pstfix(calc.tokenized("(4+5*(1+3*(25-4)+25*3))"))))+"\n");
+//		System.out.print(calc.postfixCalculation((calc.Infix2Pstfix(calc.tokenized("4+5"))))+"\n");
+//		PostfixCalculator calc1 = new PostfixCalculator("ArrayList");
+//		System.out.print("\n");
+//		System.out.print(calc1.tokenized("(1 + 2 * 12891.389)")+"\n");
+//		System.out.print(calc1.tokenized("(1+2*12891.389)")+"\n");
+////		System.out.print("fjdksla\n");
+//		System.out.print(calc1.tokenized("(1+2*12891.389")+"\n");
+//		System.out.print(calc1.tokenized("(1+fjdskl*12891.389)")+"\n");
+////		System.out.print("\n\n\nOperacion1\n\n\n");
+//		System.out.print(calc1.Infix2Pstfix(calc1.tokenized("3+2"))+"\n");
+//		System.out.print(calc1.Infix2Pstfix(calc1.tokenized("(4+5*(1+3*(25-4)+25*3))"))+"\n");
+//		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("(4+5*(1+3*(25-4)+25*3))"))))+"\n");
+//		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("4+5"))))+"\n");
+//		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("20*50"))))+"\n");
+//		System.out.print(calc1.postfixCalculation((calc1.Infix2Pstfix(calc1.tokenized("20+10*"))))+"\n");
+//		System.out.print(calc1.calculate("1+1")+"\n");
+//		System.out.print(calc1.calculate("27* (24+36/0)")+"\n");
+//		System.out.print(calc1.calculate("27* (24-36/0)")+"\n");
+//
+//		System.out.print(calc1.calculate("27* (24+36/0")+"\n");
+//
+//		System.out.print(calc1.calculate("27* (24++36/0)")+"\n");
+//
+//		System.out.print(calc1.calculate("27* (fjdskal+36/0)")+"\n");
+//	}
+//	
 
 }
