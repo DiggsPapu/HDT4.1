@@ -8,15 +8,16 @@ public class Factory {
 	 * @return IStack<String> based on the option
 	 * @exception null
 	 */
+	@SuppressWarnings("unchecked")
 	public static IStack<String> CreateStack(String selectedFactory) {
 		switch (selectedFactory) {
 		
 		case "Vector":{
-			System.out.print("\nSe ha creado un vector");
+//			System.out.print("\nSe ha creado un vector");
 			return new vector<>();
 		}
 		case "ArrayList":{
-			System.out.print("\nSe ha creado un arrayList");
+//			System.out.print("\nSe ha creado un arrayList");
 			return new arrayList<>();
 		}
 		case "List":{
@@ -38,7 +39,7 @@ public class Factory {
 	 */
 	private static IList<String> CreateList(){
 		Scanner scan = new Scanner(System.in);
-		System.out.print("\nIngrese el tipo de lista (LinkedList, DoubleLinkedList): ");
+//		System.out.print("\nIngrese el tipo de lista (LinkedList, DoubleLinkedList): ");
 		String selectedList = scan.nextLine();
 		System.out.print(selectedList);
 		switch(selectedList) {

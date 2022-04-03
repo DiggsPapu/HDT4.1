@@ -19,9 +19,11 @@ public class vector<T> implements IStack<T> {
 		return (T) structure.remove(structure.size()-1);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public T peek() {
 		// TODO Auto-generated method stub
+		
 		return (T) structure.get(structure.size()-1);
 	}
 
