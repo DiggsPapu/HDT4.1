@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class arrayList<T> implements IStack<T> {
 	
 	private ArrayList<String> structure;
-	
+	 
 	public arrayList() {
 		this.structure = new ArrayList<String>();
 	}
