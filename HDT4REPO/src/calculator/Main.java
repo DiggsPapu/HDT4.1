@@ -64,6 +64,6 @@ public class Main {
 			System.out.print("\nNo es valido\n");
 		}
 		scann.close();
-	}
+	} 
 
 }
