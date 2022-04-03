@@ -5,7 +5,11 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class Main {
-
+/**
+ * It is to read and get the string with the operation in the text file
+ * @param dir
+ * @return String, string with the operation instruction
+ */
 	private static String addFileText(String dir) {
 		try {
 			
@@ -45,17 +49,17 @@ public class Main {
 			//C:\Users\Windows 10\Documents\UVG\CODING\Algoritmos y estructuras de datos\HDT\HDT4 Repo\Others\datos.txt    
 			//DoubleLinkedList
 			//LinkedList
-			System.out.print(calc.calculate(operation)); 
+			System.out.print("Resultado: "+calc.calculate(operation)); 
 		}else if (scan.equals("ArrayList")) {
 			String operation=Main.addFileText(dir);
 			PostfixCalculator calc = new PostfixCalculator(scan);
-			System.out.print(calc.calculate(operation));
+			System.out.print("Resultado: "+calc.calculate(operation));
 			
 		}else if (scan.equals("List")) {
 			String operation=Main.addFileText(dir);
 			PostfixCalculator calc = new PostfixCalculator(scan);
 			
-			System.out.print(calc.calculate(operation));
+			System.out.print("Resultado: "+calc.calculate(operation));
 		}else {
 			System.out.print("\nNo es valido\n");
 		}

@@ -127,7 +127,7 @@ public class PostfixCalculator {
 //				System.out.print("hola");
 //				System.out.print(this.selectedList);
 //				System.out.print("INVERSED: "+inversed.isEmpty());
-				System.out.print("Resultado: ");
+//				System.out.print("Resultado: ");
 				for (int k = 0 ; k < value ; k++ ) {
 
 //					System.out.print(tokens.peek());

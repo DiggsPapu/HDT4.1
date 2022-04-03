@@ -20,9 +20,12 @@ class TestFactory {
 		IStack<String> stack4 = Factory.CreateStack("hola");
 		assertEquals(stack4,null);//Caso en el que es opcion no valida
 		
-		IStack<String> stack3 = Factory.CreateStack("List");
-		stack3.getClass();
-		assertEquals(stack3.isEmpty(),true);//Ingrese DoubleLinkedList o LinkedList
+		IStack<String> stack3 = (IStack<String>) Factory.CreateList("DoubleLinkedList");
+		
+		assertEquals(stack3.isEmpty(),true);
+		IStack<String> stack5 = (IStack<String>) Factory.CreateList("LinkedList");
+		
+		assertEquals(stack5.isEmpty(),true);
 		
 	}
 
