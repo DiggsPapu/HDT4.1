@@ -6,21 +6,40 @@ public class PostfixCalculator {
 	private IStack<String> op;
 	private IStack<String> psfix;
 	private IStack<String> tokens;
-	
+	private String selectedList;
+	/**
+	 * Is the constructor to build the type of stacks to be used and some string variables to know what was chosen.
+	 * So in case we create a new stack we know which type to use
+	 * @param stack
+	 */
+	@SuppressWarnings("unchecked")
 	public PostfixCalculator(String stack) {
 		Scanner scan = new Scanner(System.in);
 		this.type = stack;
 		this.calculator = Calculator.getInstance();
 //		System.out.print(this.calculator.hashCode());
-		try {
-			this.psfix = Factory.CreateStack(stack);
-			this.op = Factory.CreateStack(stack);
-			this.tokens = Factory.CreateStack(stack);
+		
+		if (stack.equals("List")) {
+			System.out.print("\nIngrese el tipo de lista (LinkedList, DoubleLinkedList): ");
+			this.selectedList = scan.nextLine();
+//			System.out.print(selectedList);
+			scan.close();
+			this.op = (IStack<String>) Factory.CreateList(this.selectedList);
+			this.psfix = (IStack<String>) Factory.CreateList(this.selectedList);
+			this.tokens = (IStack<String>) Factory.CreateList(this.selectedList);
+//			System.out.print("Se creo el list");
+//			System.out.print(this.selectedList);
 		}
-		catch (Exception e) {
+		else if(stack.equals("ArrayList")||stack.equals("Vector")) {
+			this.psfix = Factory.CreateStack(this.type);
+			this.op = Factory.CreateStack(this.type);
+			this.tokens = Factory.CreateStack(this.type);
+		}
+		if (this.psfix==null||this.op==null||this.tokens==null) {
 			this.op = null;
 			this.psfix = null;
 			this.tokens = null;
+			
 		}
 		
 		scan.close();
@@ -35,6 +54,7 @@ public class PostfixCalculator {
 	 * @param scan, String to be put in tokens
 	 * @return stack of tokens
 	 */
+	@SuppressWarnings("unchecked")
 	private IStack<String> tokenized(String scan){
 		
 		if( scan.length() <= 1 )  {
@@ -88,13 +108,31 @@ public class PostfixCalculator {
 			}
 			if (cp == op) {
 				//Se vacia tokens
+//				System.out.print(this.selectedList);
+//				System.out.print("\n"+this.tokens.peek());
 				int value =this.tokens.count();
-				IStack<String> inversed = Factory.CreateStack(this.type);
-//				System.out.print("INVERSED: "+inversed.isEmpty());
-				for (int k = 0 ; k < value ; k++ ) {
-					inversed.push(this.tokens.pull());
+				IStack<String> inversed;
+				if (this.type.equals("ArrayList")||this.type.equals("Vector")) {
+					inversed = Factory.CreateStack(this.type);
+					
 				}
-				
+				else if (this.type.equals("List")) {
+//					System.out.print("Entro");
+					inversed = (IStack<String>) Factory.CreateList(this.selectedList);
+					
+				}
+				else {
+					return null;
+				}
+//				System.out.print("hola");
+//				System.out.print(this.selectedList);
+//				System.out.print("INVERSED: "+inversed.isEmpty());
+				System.out.print("Resultado: ");
+				for (int k = 0 ; k < value ; k++ ) {
+
+//					System.out.print(tokens.peek());
+					inversed.push(this.tokens.pull());
+				}				
 				
 				return inversed;
 			}
@@ -209,7 +247,18 @@ public class PostfixCalculator {
 				this.psfix.push(op.pull());
 			}
 			int sizef = this.psfix.count();
-			IStack<String> postfix = Factory.CreateStack(this.type);
+			IStack<String> postfix;
+			if (this.type.equals("ArrayList")||this.type.equals("Vector")) {
+				postfix = Factory.CreateStack(this.type);
+				
+			}
+			else if (this.type.equals("List")){
+				postfix = (IStack<String>) Factory.CreateList(this.selectedList);
+			}
+			else {
+				return null;
+			}
+			
 //			System.out.print("Postfix: ");
 			for (int k = 0 ; k < sizef ; k++) {
 				postfix.push(this.psfix.pull());
@@ -323,7 +372,11 @@ public class PostfixCalculator {
 	 * @return String with the result, in case it is null, it means the operation could not be done
 	 */
 	public String calculate(String scan) {
-		return postfixCalculation(Infix2Pstfix(tokenized(scan)));
+		if (this.calculator!=null && this.op!=null && this.psfix!= null && this.tokens!=null) {
+			return postfixCalculation(Infix2Pstfix(tokenized(scan)));
+		}else {
+			return null;
+		}
 	}
 
 //	public static void main(String[] args) {

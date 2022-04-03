@@ -26,6 +26,11 @@ class TestPostfix {
 		assertEquals(calc1.calculate("1+1)"), null);
 		assertEquals(calc1.calculate("1++"), null);
 		assertEquals(calc1.calculate("(1++1)"), null);
+		assertEquals(calc1.calculate("1"), null);
+		assertEquals(calc1.calculate("(1+3*4"), null);
+		PostfixCalculator calc2 = new PostfixCalculator("jeje");
+		assertEquals(calc1.calculate("(1+3*4*4/2/2-1)"), "49.0");
+		
 		
 	}
 

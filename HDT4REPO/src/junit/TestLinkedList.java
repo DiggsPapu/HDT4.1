@@ -4,35 +4,35 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import calculator.doubleLinkedList;
+import calculator.linkedList;
+
+class TestLinkedList {
 
 
-class TestDoubleLinkedList {
-	
 	@Test
 	void testPush() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		assertEquals(v.peek(), "Jeje");
 	}
 
 	@Test
 	void testPull() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		assertEquals(v.pull(), "Jeje");
 	}
 
 	@Test
 	void testPeek() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		assertEquals(v.peek(), "Jeje");
 	}
 
 	@Test
 	void testCount() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		assertEquals(v.count(), 1);
 		v.pull();
@@ -41,7 +41,7 @@ class TestDoubleLinkedList {
 
 	@Test
 	void testIsEmpty() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		assertEquals(v.isEmpty(), false);
 		v.pull();
@@ -49,7 +49,7 @@ class TestDoubleLinkedList {
 	}
 	@Test
 	void testInsertAtLast() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		v.push("hola");
 		v.InsertAtLast("como estas");
@@ -58,7 +58,7 @@ class TestDoubleLinkedList {
 
 	@Test
 	void testDeleteLast() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		v.push("hola");
 		v.InsertAtLast("como estas");
@@ -69,13 +69,11 @@ class TestDoubleLinkedList {
 
 	@Test
 	void testGetLast() {
-		doubleLinkedList<String> v = new doubleLinkedList<String>();
+		linkedList<String> v = new linkedList<String>();
 		v.push("Jeje");
 		v.push("hola");
 		v.InsertAtLast("como estas");
 		assertEquals(v.peek(), v.GetLast());
 	}
 
-	}
-
-
+}
