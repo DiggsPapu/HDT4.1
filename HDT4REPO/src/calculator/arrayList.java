@@ -38,7 +38,7 @@ public class arrayList<T> implements IStack<T> {
 	public int count() {
 		// TODO Auto-generated method stub
 		return structure.size();
-	}
+	} 
 
 	@Override
 	public boolean isEmpty() {
